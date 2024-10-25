@@ -6,6 +6,9 @@ import { Video } from "@/components/Video";
 import { Testimonials } from "@/components/Testimonials";
 import { Faq } from "@/components/Faq";
 import { Cta } from "@/components/Cta";
+import dynamic from 'next/dynamic';
+
+const DynamicMap = dynamic(() => import ("@/components/Map"), { ssr: false });
 
 import { benefitOne, benefitTwo } from "@/components/data";
 export default function Home() {
@@ -13,13 +16,12 @@ export default function Home() {
     <Container>
       <Hero />
       <SectionTitle
-        preTitle="Nextly Benefits"
-        title=" Why should you use this landing page"
+        preTitle="Функции Госсорткомиссии"
+        title="Регионы допуска"
       >
-        Nextly is a free landing page & marketing website template for startups
-        and indie projects. Its built with Next.js & TailwindCSS. And its
-        completely open-source.
+        Проведение государственных испытаний селекционных достижений на отличимость, однородность и стабильность, государственных испытаний сортов растений по хозяйственно-полезным признакам и свойствам проводится в 12 регионах допуска и 7 световых зонах.
       </SectionTitle>
+      <DynamicMap />
 
       <Benefits data={benefitOne} />
       <Benefits imgPos="right" data={benefitTwo} />
@@ -51,7 +53,7 @@ export default function Home() {
       </SectionTitle>
 
       <Faq />
-      <Cta />
+      {/* <Cta /> */}
     </Container>
   );
 }
