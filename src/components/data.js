@@ -1,57 +1,47 @@
 import {
-  FaceSmileIcon,
-  ChartBarSquareIcon,
-  CursorArrowRaysIcon,
-  DevicePhoneMobileIcon,
-  AdjustmentsHorizontalIcon,
-  SunIcon,
+  BookOpenIcon,
+  BookmarkSlashIcon,
+  PaperClipIcon,
+  ClipboardDocumentListIcon,
+  LockClosedIcon
 } from "@heroicons/react/24/solid";
 
-import benefitOneImg from "../../public/img/benefit-one.png";
-import benefitTwoImg from "../../public/img/benefit-two.png";
+import benefitOneImg from "../../public/img/wheat2_nobg.png";
+import benefitTwoImg from "../../public/img/tomato_nobg.png";
+
 
 const benefitOne = {
-  title: "Регионы допуска",
-  desc: "Проведение государственных испытаний селекционных достижений на отличимость, однородность и стабильность, государственных испытаний сортов растений по хозяйственно-полезным признакам и свойствам проводится в 12 регионах допуска и 7 световых зонах.",
+  title: "Работа учреждения",
+  desc: "Учреждение собирает и анализирует результаты испытаний, принимает решения о включении селекционных достижений в Государственные реестры и ежегодно издает:",
   image: benefitOneImg,
   bullets: [
     {
-      title: "Understand your customers",
-      desc: "Then explain the first point breifly in one or two lines.",
-      icon: <FaceSmileIcon />,
+      title: "Государственный реестр селекционных достижений, допущенных к использованию",
+      desc: "(сорта растений, породы животных)",
+      icon: <BookOpenIcon />,
     },
     {
-      title: "Improve acquisition",
-      desc: "Here you can add the next benefit point.",
-      icon: <ChartBarSquareIcon />,
-    },
-    {
-      title: "Drive customer retention",
-      desc: "This will be your last bullet point in this section.",
-      icon: <CursorArrowRaysIcon />,
+      title: "Государственный реестр охраняемых селекционных достижений",
+      desc: "(сорта растений, породы животных)",
+      icon: <LockClosedIcon />,
     },
   ],
 };
 
 const benefitTwo = {
-  title: "Offer more benefits here",
-  desc: "You can use this same layout with a flip image to highlight your rest of the benefits of your product. It can also contain an image or Illustration as above section along with some bullet points.",
+  title: "Дополнительные издания",
+  desc: "Также Госсорткомиссия издает:",
   image: benefitTwoImg,
   bullets: [
     {
-      title: "Mobile Responsive Template",
-      desc: "Nextly is designed as a mobile first responsive template.",
-      icon: <DevicePhoneMobileIcon />,
+      title: "Характеристики",
+      desc: "Характеристики сортов растений, впервые включенных в Государственный реестр селекционных достижений, допущенных к использованию",
+      icon: <PaperClipIcon />,
     },
     {
-      title: "Powered by Next.js & TailwindCSS",
-      desc: "This template is powered by latest technologies and tools.",
-      icon: <AdjustmentsHorizontalIcon />,
-    },
-    {
-      title: "Dark & Light Mode",
-      desc: "Nextly comes with a zero-config light & dark mode. ",
-      icon: <SunIcon />,
+      title: "Бюллетени",
+      desc: "Периодические издания, содержащие информацию о вновь поступающиx заявках на селекционные достижения",
+      icon: <ClipboardDocumentListIcon />,
     },
   ],
 };

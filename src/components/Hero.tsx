@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { Container } from "@/components/Container";
 import heroImg from "../../public/img/logo.png";
+import mcxImg from "../../public/img/mcx.png";
 
 export const Hero = () => {
   return (
@@ -21,8 +22,6 @@ export const Hero = () => {
           <div className="">
             <Image
               src={heroImg}
-              width="616"
-              height="617"
               className={"object-cover"}
               alt="Hero Illustration"
               loading="eager"
@@ -32,6 +31,12 @@ export const Hero = () => {
         </div>
       </Container>
       <Container>
+      <div className="flex flex-wrap justify-center gap-5 md:justify-around">
+            <div className="pt-2 text-gray-400 dark:text-gray-400 flex flex-col justify-center mb-10">
+              <Image width={100} height={100} src={mcxImg.src} alt="mcx" className="mx-auto" />
+              <span className="font-bold text-center">МИНИСТЕРСТВО СЕЛЬСКОГО ХОЗЯЙСТВА</span>
+            </div>
+          </div>
         <div className="flex flex-col justify-center">
           <div className="text-xl text-center text-gray-700 dark:text-white">
             <span className="text-lime-600">2000+</span>{" "}
@@ -40,24 +45,6 @@ export const Hero = () => {
           <div className="text-xl text-center text-gray-700 dark:text-white">
             <span className="text-lime-600">22700+</span>{" "}
             сортоопытов проведено в рамках государственных испытаний сортов сельскохозяйственных растений
-          </div>
-
-          <div className="flex flex-wrap justify-center gap-5 mt-10 md:justify-around">
-            <div className="pt-2 text-gray-400 dark:text-gray-400">
-              <AmazonLogo />
-            </div>
-            <div className="text-gray-400 dark:text-gray-400">
-              <VerizonLogo />
-            </div>
-            <div className="text-gray-400 dark:text-gray-400">
-              <MicrosoftLogo />
-            </div>
-            <div className="pt-1 text-gray-400 dark:text-gray-400">
-              <NetflixLogo />
-            </div>
-            <div className="pt-2 text-gray-400 dark:text-gray-400">
-              <SonyLogo />
-            </div>
           </div>
         </div>
       </Container>

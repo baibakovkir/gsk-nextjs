@@ -23,11 +23,11 @@ function Map() {
     },[])
 
   return (
-    <div className='relative w-full h-[700px] overflow-hidden'>
+    <div className='relative w-full h-[500px] overflow-hidden lg:h-[700px]'>
     <MapContainer 
       maxBounds={[[10, 10], [180, 180]]}
       center={[55.45, 50,25]} 
-      zoom={5}
+      zoom={4}
       crs={CRS.EPSG3395}
       minZoom={3}
       scrollWheelZoom={false}

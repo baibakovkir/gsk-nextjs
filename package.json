@@ -1,7 +1,7 @@
 {
-  "name": "nextly-template",
+  "name": "gsk",
   "version": "2.0.0",
-  "description": "Nextly Landing Page Template",
+  "description": "Госсорткомиссия, официальный сайт",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -11,14 +11,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/web3templates/nextly-template"
+    "url": "https://github.com/baibakovkir/gsk-nextjs.git"
   },
   "keywords": [
     "nextjs",
     "tailwindcss",
     "free"
   ],
-  "author": "Surjith S M",
+  "author": "Baibakov Kirill",
   "license": "ISC",
   "dependencies": {
     "@headlessui/react": "^2.0.3",
