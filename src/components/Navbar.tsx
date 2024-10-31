@@ -75,9 +75,9 @@ export const Navbar = () => {
                           {item.name}
                       </Link>
                     ))}
-                    <Link href="/" className="w-full px-6 py-2 mt-3 text-center text-white bg-lime-600 rounded-md xl:ml-5">         
+                    {/* <Link href="/" className="w-full px-6 py-2 mt-3 text-center text-white bg-lime-600 rounded-md xl:ml-5">         
                         Вход
-                    </Link>
+                    </Link> */}
                   </>
                 </Disclosure.Panel>
             </>
