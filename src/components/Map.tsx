@@ -13,6 +13,11 @@ interface Feature {
     };
 }
 
+interface Zone {
+  Regions: string[];
+  Name: string;
+  Color: string;
+}
 
 function Map() {
     const [geoJson, setGeoJson] = useState(null);
@@ -21,15 +26,16 @@ function Map() {
 
     const handleRegionsMap = (feature: Feature, layer: any, mapObject: any) => {
         let status = false;
-        Object.values(mapObject).forEach((zone) => {
-            if (zone.Regions.includes(feature.properties.full_name)) {
-                layer.bindPopup(`${feature.properties.name} - ${zone.Name}`);
-                layer.setStyle({
-                    fillColor: zone.Color,
-                    fillOpacity: 0.3
-                });
-                status = true;
-            }
+        Object.values(mapObject).forEach((value) => {
+          const zone = value as Zone;
+          if (zone.Regions.includes(feature.properties.full_name)) {
+            layer.bindPopup(`${feature.properties.name} - ${zone.Name}`);
+            layer.setStyle({
+              fillColor: zone.Color,
+              fillOpacity: 0.3
+            });
+            status = true;
+          }
         });
 
         if (!status) {

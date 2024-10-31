@@ -22,7 +22,7 @@ export default function Registry() {
   }, [inView]);
 
   async function fetchData() {
-      const response = await fetch(`/api/registry?page=${page}`);
+      const response = await fetch(`/api/registry?page=${page }`);
       const newData = await response.json();
       setData([...data, ...newData]);
       setPage(page + 1);
