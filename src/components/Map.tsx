@@ -61,6 +61,8 @@ function Map() {
     useEffect(() => {
         const attributionElement = document.getElementsByClassName('leaflet-control-attribution')[0] as HTMLElement;
         attributionElement.style.display = 'none';
+        const leafletContainer = document.getElementsByClassName('leaflet-container')[0] as HTMLElement;
+        leafletContainer.style.background = 'transparent';
         fetch("/json/ru.geojson")
             .then((res) => res.json())
             .then((geoJson) => setGeoJson(geoJson));
