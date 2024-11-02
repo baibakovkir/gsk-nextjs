@@ -8,10 +8,10 @@ import { link } from "fs";
 export const Navbar = () => {
   const navigation = [
     {name: "Реестр достижений", link: "/registry"},
-    {name: "Издания", link: "/registry"},
-    {name: "Документы", link: "/registry"},
-    {name: "Пресса", link: "/registry"},
-    {name: "Контакты", link: "/registry"},
+    {name: "Издания", link: "/publications"},
+    {name: "Документы", link: "/documents"},
+    {name: "Пресса", link: "/news"},
+    {name: "Контакты", link: "/contacts"},
   ];
 
   return (

@@ -5,6 +5,7 @@ import "leaflet/dist/leaflet.css";
 import { CRS } from 'leaflet';
 import zones from '../../public/json/zones';
 import regions from '../../public/json/regions';
+import * as L from 'leaflet';
 
 interface Feature {
     properties: {
@@ -28,7 +29,7 @@ function Map() {
         let status = false;
         Object.values(mapObject).forEach((value) => {
           const zone = value as Zone;
-          if (zone.Regions.includes(feature.properties.full_name)) {
+          if (zone.Regions.includes(feature.properties.name)) {
             layer.bindPopup(`${feature.properties.name} - ${zone.Name}`);
             layer.setStyle({
               fillColor: zone.Color,
@@ -39,7 +40,11 @@ function Map() {
         });
 
         if (!status) {
-            layer.bindPopup(feature.properties.full_name);
+            layer.bindPopup(feature.properties.name);
+            layer.setStyle({
+                fillColor: 'red',
+                fillOpacity: 0.3
+              });
         }
     };
 
@@ -55,13 +60,11 @@ function Map() {
 
     useEffect(() => {
         const attributionElement = document.getElementsByClassName('leaflet-control-attribution')[0] as HTMLElement;
-        const leafletContainer = document.getElementsByClassName('leaflet-container')[0] as HTMLElement;
-        leafletContainer.style.background = 'transparent';
         attributionElement.style.display = 'none';
-        fetch("/json/russia_geojson_wgs84.geojson")
+        fetch("/json/ru.geojson")
             .then((res) => res.json())
             .then((geoJson) => setGeoJson(geoJson));
-    }, []);
+    }, [regionsMap]);
 
     return (
         <>
@@ -80,7 +83,27 @@ function Map() {
                 </button>
             </div>
             <div className='relative w-full h-[500px] overflow-hidden lg:h-[700px]'>
-                <MapContainer
+                
+                {regionsMap && <MapContainer
+                    maxBounds={[[10, 0], [85, 180]]}
+                    center={[55.45, 50.25]}
+                    zoom={4}
+                    crs={CRS.EPSG3857}
+                    minZoom={3}
+                    scrollWheelZoom={false}
+                    className='w-full h-full'>
+                        {/* <TileLayer
+                            url="https://{s}.basemaps.cartocdn.com/rastertiles/voyager_nolabels/{z}/{x}/{y}.png"
+                        /> */}
+                    {geoJson && (
+                        <GeoJSON
+                            key={JSON.stringify(geoJson)}
+                            data={geoJson!}
+                            onEachFeature={(feature, layer) => handleRegionsMap(feature, layer, regions)}
+                        />
+                    )}
+                </MapContainer>}
+                {zonesMap && <MapContainer
                     maxBounds={[[10, 0], [85, 180]]}
                     center={[55.45, 50.25]}
                     zoom={4}
@@ -92,10 +115,10 @@ function Map() {
                         <GeoJSON
                             key={JSON.stringify(geoJson)}
                             data={geoJson!}
-                            onEachFeature={(feature, layer) => handleRegionsMap(feature, layer, regions)}
+                            onEachFeature={(feature, layer) => handleRegionsMap(feature, layer, zones)}
                         />
                     )}
-                </MapContainer>
+                </MapContainer>}
             </div>
         </>
     );

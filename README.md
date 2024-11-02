@@ -2,7 +2,7 @@
 
 This template is Gossortkomissiya web-site. Its built with Next.js & TailwindCSS.
 And its completely open-source.
-<a href='https://gsk-nextjs-7lnh20h7i-kiryxa09s-projects.vercel.app/' target='_blank'> 
+<a href='https://gsk-nextjs.vercel.app/' target='_blank'> 
 ![image](https://github.com/baibakovkir/gsk-nextjs/blob/main/public/img/site_preview.png?raw=true)
 </a>
 
