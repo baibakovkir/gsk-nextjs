@@ -1,10 +1,11 @@
 import { Container } from "@/components/Container";
+import { SectionTitle } from "@/components/SectionTitle";
+import Department from "./department";
 export default function Publications() {
-
 
   return (
       <Container>
-          <h1>Контакты</h1>
+        <Department/>
       </Container>
   );
 }
