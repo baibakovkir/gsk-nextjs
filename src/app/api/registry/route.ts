@@ -9,7 +9,7 @@ export const GET = async (req: NextRequest) => {
   const start = (page - 1) * pageSize;
   const end = start + pageSize;
 
-  const fileStream = fs.createReadStream('./public/json/registry.csv');
+  const fileStream = fs.createReadStream('public/json/registry.csv');
   const rl = readline.createInterface({
       input: fileStream,
       crlfDelay: Infinity
