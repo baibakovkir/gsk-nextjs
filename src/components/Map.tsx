@@ -84,7 +84,7 @@ function Map() {
                     Зоны
                 </button>
             </div>
-            <div className='relative w-full h-[500px] overflow-hidden lg:h-[700px]'>
+            <div className='relative w-full h-[300px] md:h-[500px] overflow-hidden lg:h-[700px]'>
                 
                 {regionsMap && <MapContainer
                     maxBounds={[[10, 0], [85, 180]]}

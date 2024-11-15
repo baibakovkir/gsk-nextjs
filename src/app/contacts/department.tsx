@@ -50,50 +50,52 @@ export default function Department() {
             <SectionTitle preTitle="Контакты" title="Руководство" />
             <div className="w-full flex items-center lg:justify-between flex-col flex-wrap lg:mb-10 lg:flex-row">
               {managers1.map((manager, index) => (
-                <div className="flex flex-col items-center ml-3 mr-3 mt-5 w-64 lg:mt-0" key={index}>
+                <div className="flex flex-col items-center ml-3 mr-3 mt-10 w-64" key={index}>
                   <div className="text-xl font-bold text-center lg:text-2xl">{manager[0].split(' ')[0]}</div>
                   <div className="mb-2 font-bold max-w-64 text-center lg:text-xl">{manager[0].split(' ')[1]} {manager[0].split(' ')[2]}</div>
                   <div className="text-xs font-bold text-lime-600 mb-2 block max-w-64 text-center">{manager[1]}</div>
-                  <div className="text-xs font-bold">{manager[2]}</div>
-                  <div className="text-xs font-bold">{manager[3]}</div>
+                  <div className="text-xs lg:text-sm font-bold">{manager[2]}</div>
+                  <div className="text-xs lg:text-sm font-bold">{manager[3]}</div>
                 </div>
               ))}
             </div>
             <div className="w-full flex items-center lg:justify-between flex-col flex-wrap mb-10 lg:flex-row">
               {managers2.map((manager, index) => (
-                <div className="flex flex-col items-center ml-3 mr-3 mt-5 w-64 lg:mt-0" key={index}>
+                <div className="flex flex-col items-center ml-3 mr-3 mt-10 w-64 lg:mt-0" key={index}>
                   <div className="text-xl font-bold text-center lg:text-2xl">{manager[0].split(' ')[0]}</div>
                   <div className="mb-2 font-bold max-w-64 text-center lg:text-xl">{manager[0].split(' ')[1]} {manager[0].split(' ')[2]}</div>
                   <div className="text-xs font-bold text-lime-600 mb-2 block max-w-64 text-center">{manager[1]}</div>
-                  <div className="text-xs font-bold">{manager[2]}</div>
-                  <div className="text-xs font-bold">{manager[3]}</div>
+                  <div className="text-xs lg:text-sm font-bold">{manager[2]}</div>
+                  <div className="text-xs lg:text-sm font-bold">{manager[3]}</div>
                 </div>
               ))}
             </div>
           </div>
           <div className="w-full flex justify-center flex-col items-center">
+            <div className="w-full h-[1px] bg-lime-600"></div>
             <SectionTitle title="Отделы" />
             <div className="w-full grid grid-cols-1 lg:grid-cols-2 gap-5 justify-start ">
               {departments.map((department, index) => (
                 <div className="flex items-start justify-start flex-col mt-5 lg:mb-8 mb-5" key={index}>
                   <div className="w-full text-lg lg:min-h-20 font-bold text-center lg:text-xl mb-4">{department[0]}</div>
                   <div className="w-full flex flex-col lg:flex-row">
-                    <div className="flex flex-col items-center w-full lg:w-4/6">
+                    <div className="flex flex-col items-center w-full lg:w-2/4">
                       <div className="text-xs font-bold text-lime-600 mb-2 block max-w-64 text-center">{department[1]}</div>
-                      <div className="text-lg text-center">{department[2]}</div>
+                      <div className="text-xl text-center">{department[2].split(' ')[0]}</div>
+                      <div className="text-lg text-center">{department[2].split(' ')[1]} {department[2].split(' ')[2]}</div>
                       {department[12] && <div className="text-xs font-bold text-lime-600 lg:mt-6 mt-2 mb-2 block max-w-64 text-center">{department[12]}</div>}
                       {department[13] && <div className="text-sm w-full text-center mb-2">{department[13]}</div>}
                     </div>
-                    <div className="flex flex-col items-center w-full lg:justify-start justify-center lg:w-2/6">
+                    <div className="flex flex-col items-center w-full lg:justify-start justify-center lg:w-2/4">
                       <div className="text-xs font-bold text-lime-600 mb-2 block max-w-64 text-center">{department[3]}</div>
-                      <div className="text-sm w-full text-center lg:text-start mb-2">{department[4]}</div>
-                      <div className="text-sm w-full text-center lg:text-start mb-2">{department[5]}</div>
+                      <div className="text-sm w-full text-center  mb-2">{department[4]}</div>
+                      <div className="text-sm w-full text-center  mb-2">{department[5]}</div>
                       {department[6] && <div className="text-xs font-bold text-lime-600 mb-2 block max-w-64 text-center">{department[6]}</div>}
-                      {department[7] && <div className="text-sm w-full text-center lg:text-start mb-2">{department[7]}</div>}
-                      {department[8] && <div className="text-sm w-full text-center lg:text-start mb-2">{department[8]}</div>}
+                      {department[7] && <div className="text-sm w-full text-center  mb-2">{department[7]}</div>}
+                      {department[8] && <div className="text-sm w-full text-center  mb-2">{department[8]}</div>}
                       {department[9] && <div className="text-xs font-bold text-lime-600 mb-2 block max-w-64 text-center">{department[9]}</div>}
-                      {department[10] && <div className="text-sm w-full text-center lg:text-start mb-2">{department[10]}</div>}
-                      {department[11] && <div className="text-sm w-full text-center lg:text-start mb-2">{department[11]}</div>}
+                      {department[10] && <div className="text-sm w-full text-center  mb-2">{department[10]}</div>}
+                      {department[11] && <div className="text-sm w-full text-center  mb-2">{department[11]}</div>}
                     </div>
                   </div>
                 </div>
